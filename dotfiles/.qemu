@@ -1,0 +1,14 @@
+#!/bin/bash
+
+qemu-system-x86_64 -m 4G -enable-kvm -smp 4 -boot order=d -drive file=~/.virt/debian_testing,format=raw -redir tcp:22222::22
+
+
+## build
+
+# create disk
+# qemu-img create -f raw image_file 4G
+
+# install
+# qemu-system-x86_64 -m 2G -enable-kvm -smp 4 -cdrom iso_image -boot order=d -drive file=disk_image,format=raw
+
+#qemu-system-x86_64 -m 4G -enable-kvm -smp 4 -cdrom debian-9.4.0-amd64-netinst.iso -boot order=d -drive file=~/.virt/debian_testing,format=raw
